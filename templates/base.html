@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- ヘッド・基礎情報 -->
+<head>
+
+    <!-- 基礎設定情報 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ページタイトル -->
+    <title>{% block title %}My Page{% endblock %}</title>
+
+    <!-- CSSのリンク -->
+    <link rel="stylesheet" href="static/style/base_style.css">
+
+</head>
+
+<!-- ボディ -->
+<body>
+
+    <!-- ヘッダー -->
+    <header></header>
+
+    <!-- ヘッダー以外 -->
+    <div class="container">
+
+        <!-- 左のサイドバー -->
+        <aside class="left-sidebar">
+            <button>Home</button>
+            <button>Timeline</button>
+            <button>Profile</button>
+            <button class="post-button">Post</button>
+        </aside>
+        
+        <!-- 中央 -->
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <!-- 右のサイドバー -->
+        <aside class="right-sidebar">
+            <form action="/search" method="POST">
+                <input type="text" name="query" placeholder="検索">
+                <button type="submit">Search</button>
+            </form>
+            <div class="ai-comment">
+                <h3>AI Comment</h3>
+                <div class="ai-response"></div>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
+
+        
+        

@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: pink;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 15px);
+}
+
+.left-sidebar {
+    background-color: yellowgreen;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+}
+
+.left-sidebar button {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.post-button {
+    background-color: gray;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 20px);
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.report {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.report h2 {
+    margin-top: 5px;
+}
+
+.report-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.content {
+    text-align: center;
+}
+
+.right-sidebar {
+    width: 250px;
+    padding: 20px;
+}
+
+.right-sidebar form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ai-comment {
+    margin-top: 20px;
+}
+
+.ai-response {
+    background-color: gray;
+    padding: 10px;
+    min-height: 50px;
+}
