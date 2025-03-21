@@ -1,5 +1,5 @@
 
-import requests, json, datetime
+import requests, json, datetime, os
 
 class get_oura_data:
     
@@ -33,6 +33,7 @@ class get_oura_data:
             latest_data = {}
 
 
+        
         # 読み込んだ心拍数と時間をJSONファイルに保存
         with open('static/data.json', mode='w', encoding='utf-8') as f:
             json.dump(latest_data, f, ensure_ascii=False)

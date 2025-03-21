@@ -1,0 +1,16 @@
+/* 投稿ページのスタイル */
+@media (max-width: 600px) {
+    main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    input, textarea, button {
+        font-size: 14px;
+    }
+}
+
+/* ボタンのホバー */
+button:hover {
+    background: #0c85d0;
+}
