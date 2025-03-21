@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensation-Sharing-SNS Login</title>
+    <link rel="stylesheet" href="static/style/login.css">
+</head>
+
+<body>
+    <h2>Login</h2>
+    
+    {% if result == False %}
+        <h3>Login Failed</h3>
+    {% endif %}
+    
+    <form method="POST" action="{{ url_for('login') }}">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+    <a href="{{ url_for('registration') }}" class="button register-link">Register Here</a>
+</body>
+
+</html>
