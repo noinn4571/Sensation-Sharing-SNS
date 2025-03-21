@@ -9,10 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ページタイトル -->
-    <title>{% block title %}My Page{% endblock %}</title>
+    <title>{% block title %}Sensation-Sharing-SNS {% endblock %}</title>
 
     <!-- CSSのリンク -->
-    <link rel="stylesheet" href="static/style/base_style.css">
+    <link rel="stylesheet" href="static/style/base.css">
+    {% block style_link %}{% endblock %}
 
 </head>
 
@@ -27,21 +28,23 @@
 
         <!-- 左のサイドバー -->
         <aside class="left-sidebar">
-            <button>Home</button>
-            <button>Timeline</button>
-            <button>Profile</button>
-            <button class="post-button">Post</button>
+
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <a class="post-button" href="{{ url_for('post') }}">Post</a>
+            
         </aside>
         
         <!-- 中央 -->
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
+        
+        {% block content %}
+        {% endblock %}
+        
 
         <!-- 右のサイドバー -->
         <aside class="right-sidebar">
-            <form action="/search" method="POST">
+            <form method="POST">
                 <input type="text" name="query" placeholder="検索">
                 <button type="submit">Search</button>
             </form>

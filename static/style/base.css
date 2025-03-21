@@ -1,0 +1,84 @@
+body {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    flex-direction: column; /* フレックスアイテムを縦方向に配置 */
+    margin: 0; /* ボディの外側の余白をゼロに設定 */
+    font-family: Arial, sans-serif; /* フォントをArialに設定 */
+}
+
+header {
+    background-color: pink; /* ヘッダーの背景色をピンクに設定 */
+    text-align: center; /* テキストを中央揃えに設定 */
+    padding: 15px; /* 内側の余白を15pxに設定 */
+    font-size: 1.2em; /* フォントサイズを1.2emに設定 */
+}
+
+.container {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    height: calc(100vh - 15px); /* 高さをビューポートの高さから15px引いた値に設定 */
+}
+
+.left-sidebar {
+    background-color: yellowgreen; /* 左のサイドバーの背景色を黄緑に設定 */
+    flex-grow: 3; /* 利用可能なスペースを3の割合で拡張して占有する */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    flex-direction: column; /* フレックスアイテムを縦方向に配置 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+    position: relative; /* 相対位置に設定 */
+}
+
+.left-sidebar a {
+    margin: 10px 0; /* 上下の外側の余白を10pxに設定 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+    border: none; /* 枠線をなしに設定 */
+    cursor: pointer; /* カーソルをポインターに設定 */
+    text-decoration: none; /* リンクの下線を消す */
+    background-color: #4CAF50; /* ボタンの背景色を緑に設定 */
+    color: white; /* ボタンの文字色を白に設定 */
+    text-align: center; /* テキストを中央揃えに設定 */
+    border-radius: 5px; /* ボタンの角を丸くする */
+    display: inline-block; /* ボタンのように表示 */
+}
+
+.left-sidebar a:hover {
+    opacity: 0.85; /* カーソルが乗った時の不透明度を0.7に設定 */
+}
+
+.post-button {
+    font-size: 30px; /* フォントサイズを30pxに設定 */
+    background-color: gray; /* ボタンの背景色を灰色に設定 */
+    color: white; /* ボタンの文字色を白に設定 */
+    position: absolute; /* 絶対位置に設定 */
+    bottom: 20px; /* 下から20pxの位置に設定 */
+    left: 50%; /* 左から50%の位置に設定 */
+    transform: translateX(-50%); /* 左右の中央に配置するためにX軸方向に50%移動 */
+    height: 50px;
+    line-height: 50px;
+    width: calc(100% - 50%); /* 幅を親要素の幅から20px引いた値に設定 */
+}
+
+main {
+    flex-grow: 12; /* 利用可能なスペースを12の割合で拡張して占有する */
+    padding: 0px; /* 内側の余白を20pxに設定 */
+}
+
+.right-sidebar {
+    background-color: lightblue; /* 右のサイドバーの背景色を水色に設定 */
+    flex-grow: 2; /* 利用可能なスペースを3の割合で拡張して占有する */
+    padding: 20px; /* 内側の余白を20pxに設定 */
+}
+
+.right-sidebar form {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    flex-direction: column; /* フレックスアイテムを縦方向に配置 */
+    gap: 10px; /* フレックスアイテム間の間隔を10pxに設定 */
+}
+
+.ai-comment {
+    margin-top: 20px; /* 上側の外側の余白を20pxに設定 */
+}
+
+.ai-response {
+    background-color: gray; /* 背景色を灰色に設定 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+    min-height: 50px; /* 最小高さを50pxに設定 */
+}

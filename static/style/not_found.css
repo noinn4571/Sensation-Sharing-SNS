@@ -1,0 +1,28 @@
+body {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    flex-direction: column; /* フレックスアイテムを縦方向に配置 */
+    margin: 0; /* ボディの外側の余白をゼロに設定 */
+    font-family: Arial, sans-serif; /* フォントをArialに設定 */
+}
+
+a {
+    margin: 10px 0; /* 上下の外側の余白を10pxに設定 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+    border: none; /* 枠線をなしに設定 */
+    cursor: pointer; /* カーソルをポインターに設定 */
+    text-decoration: none; /* リンクの下線を消す */
+    background-color: #4CAF50; /* ボタンの背景色を緑に設定 */
+    color: white; /* ボタンの文字色を白に設定 */
+    text-align: center; /* テキストを中央揃えに設定 */
+    border-radius: 5px; /* ボタンの角を丸くする */
+    display: inline-block; /* ボタンのように表示 */
+}
+
+a:hover {
+    opacity: 0.85; /* カーソルが乗った時の不透明度を0.7に設定 */
+}
+
+main {
+    flex-grow: 1; /* 利用可能なスペースを拡張して占有する */
+    padding: 2%; /* 内側の余白を20pxに設定 */
+}

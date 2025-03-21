@@ -1,21 +1,45 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ super() }}Home{% endblock %}
 
+{% block style_link %}
+    <link rel="stylesheet" href="static/style/home.css">
+{% endblock %}
 
 {% block content%}
 
-    <section class="report">
-        <h2>Report</h2>
-        <div class="report-buttons">
-            <button>Day</button>
-            <button>Week</button>
-            <button>Month</button>
-        </div>
-    </section>
-    <section class="content">
-        <img src="image.jpg" alt="投稿画像">
-        <p>投稿の説明文が入ります。</p>
-    </section>
-    
+    <main>
+        <section class="report">
+            <h2>Your Bpm Report</h2>
+            <!-- いずれグラフを表示することがあれば、使うボタンです -->
+            <!-- <div class="report-buttons">
+                <a>Day</a>
+                <a>Week</a>
+                <a>Month</a> -->
+            <!-- </div> -->
+        </section>
+        <section class="content">
+
+            {% if latest_bpm == None %}
+                <img src="{{ url_for('static', filename='image/kyoton.jpg') }}" alt="少し首を傾げた画像">
+            {% elif latest_bpm < 60 %}
+                <img src="{{ url_for('static', filename='image/low_bpm.jpg') }}" alt="すごく落ち着いた動物の画像">
+            {% elif latest_bpm < 90 %}
+                <img src="{{ url_for('static', filename='image/normal_bpm.jpg') }}" alt="落ち着いた動物の画像">
+            {% elif latest_bpm < 120 %}
+                <img src="{{ url_for('static', filename='image/little_high_bpm.jpg') }}" alt="少し活発な動物の画像">
+            {% else %}
+                <img src="{{ url_for('static', filename='image/high_bpm.jpg') }}" alt="とても活発な動物の画像">
+            {% endif %}
+
+            {% if latest_bpm != None %}
+                <p class="bpm-text">あなたの心拍数は{{ latest_bpm }}回です</p>
+                <p class="time-text">{{ latest_timestamp }}</p>
+            {% else %}
+                <p class="bpm-text">心拍数のデータを取得できませんでした</p>
+            {% endif %}
+
+        </section>
+    </main>
+
 {% endblock %}
