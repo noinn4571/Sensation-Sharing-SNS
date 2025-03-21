@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ super() }}System Error{% endblock %}
+{% block content%}
+
+    <main>
+
+        <a href="{{ url_for('home') }}">Homeへ</a>
+        <h1>システムエラーです</h1>
+        <p>{{ error_description }}</p>
+    
+    </main>
+
+
+{% endblock %}
+ 

@@ -1,0 +1,26 @@
+.report {
+    text-align: center; /* テキストを中央揃えに設定 */
+    margin-bottom: 30px; /* 下側の外側の余白を30pxに設定 */
+}
+
+.report h2 {
+    margin-top: 5px; /* 上側の外側の余白を5pxに設定 */
+}
+
+.report-buttons {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* フレックスアイテムを中央揃えに設定 */
+    gap: 10px; /* フレックスアイテム間の間隔を10pxに設定 */
+}
+
+.content {
+    text-align: center; /* テキストを中央揃えに設定 */
+}
+
+.bpm-text {
+    font-size: 30px;
+}
+
+.time-text {
+    font-size: 20px;
+}
