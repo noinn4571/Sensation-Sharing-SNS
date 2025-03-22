@@ -2,16 +2,69 @@
 
 {% block title %}{{ super() }}Profile{% endblock %}
 
-
 {% block style_link %}
-    <link rel="stylesheet" href="static/style/profile.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/profile.css') }}">
 {% endblock %}
-
 
 {% block content%}
 
-    <main>
-        
-    </main>
-    
+<main style="max-width: 600px; margin: auto; padding: 20px;">
+
+    <!-- プロフィール情報 -->
+    <div style="
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    ">
+
+        <!-- アイコン -->
+        <div style="
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: url('{{ url_for('static', filename='user_images/MichealJackson.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            margin: auto;
+        "></div>
+
+        <!-- ユーザー情報 -->
+        <h2 style="margin: 10px 0;">ユーザー名</h2>
+        <p style="color: #555; font-size: 14px;">@username</p>
+        <p style="font-size: 14px; color: #777;">自己紹介文がここに入ります。</p>
+
+        <!-- プロフィール編集ボタン -->
+        <button style="
+            background: #1DA1F2;
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        ">プロフィールを編集</button>
+
+    </div>
+
+    <!-- 投稿リスト -->
+    <h3 style="color: #333;">投稿一覧</h3>
+    {% for post in posts %}
+    <div style="
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+    ">
+        <h3 style="margin: 0; font-size: 18px; color: #333;">{{ post.title }}</h3>
+        <p style="margin: 10px 0; font-size: 14px; color: #555;">{{ post.content }}</p>
+    </div>
+    {% endfor %}
+
+</main>
+
 {% endblock %}
